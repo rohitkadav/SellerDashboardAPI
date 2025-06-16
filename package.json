@@ -7,5 +7,10 @@
   },
   "author": "Rohit Kadav",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "axios": "^1.10.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
 }
