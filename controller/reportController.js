@@ -1,6 +1,7 @@
 import Sale from '../models/sales.js';
 import Return from '../models/Return.js';
 import { Parser } from 'json2csv';
+import Stock from '../models/Stock.js';
 
 export const getSummary = async (req, res) => {
   try {
