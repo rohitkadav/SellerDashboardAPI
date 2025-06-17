@@ -3,6 +3,7 @@ import cors from  'cors';
 import connectDB from './config/mongodb.js';
 import 'dotenv/config';
 import router from './routes/authRoute.js';
+import saleRouter from './routes/saleRoute.js';
 
 
 const app= express();
@@ -14,6 +15,7 @@ await connectDB();
 
 // Routes
 app.use('/api/auth',router);
+app.use('/api/sales' , saleRouter);
 
 app.get('/' , (req , res) => {
     res.send("APP is Working")

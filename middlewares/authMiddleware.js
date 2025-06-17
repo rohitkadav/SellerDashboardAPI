@@ -39,10 +39,15 @@ const userAuth = async (req , res , next) =>{
   }
 };
 
-const roleCheck = (role) => (req, res, next) => {
-  console.log(role);
-  if (req.user.role !== role) return res.status(403).json({ message: 'Forbidden' });
-  next();
+
+const roleCheck = (...roles) => {
+  return (req, res, next) => {
+    if (!req.user || !roles.includes(req.user.role)) {
+      return res.status(403).json({ message: 'Forbidden: Role not allowed' });
+    }
+    next();
+  };
 };
+
 
 export {userAuth , verifyToken , roleCheck};
