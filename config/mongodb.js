@@ -7,7 +7,7 @@ const connectDB = async ()=>{
     })
 
 
-    await mongoose.connect(`${process.env.MONGODB_URL}/seller-dashboard-api`)
+    await mongoose.connect(`${process.env.MONGODB_URL}/SellerDashboardApi`)
 }
 
 export default connectDB;
