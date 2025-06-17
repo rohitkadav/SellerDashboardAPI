@@ -44,4 +44,10 @@ const login = async (req, res) => {
   }
 };
 
-export {login , register};
+ const logout = async (req, res) => {
+  // Client will just delete the token
+  res.status(200).json({ message: 'Logout successful. Please delete the token on client side.' });
+};
+
+
+export {login , register ,logout};
