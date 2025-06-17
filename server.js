@@ -7,6 +7,7 @@ import saleRouter from './routes/saleRoute.js';
 import stockRouter from './routes/stockRoute.js';
 import returnRouter from './routes/returnRoute.js';
 import reportRouter from './routes/reportRoute.js';
+import warehouseRouter from './routes/warehouseRoute.js';
 
 
 
@@ -23,6 +24,7 @@ app.use('/api/sales' , saleRouter);
 app.use('/api/stock', stockRouter);
 app.use('/api/returns', returnRouter);
 app.use('/api/reports', reportRouter);
+app.use('/api/warehouse', warehouseRouter);
 
 app.get('/' , (req , res) => {
     res.send("APP is Working")
