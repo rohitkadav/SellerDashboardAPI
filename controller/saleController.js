@@ -64,6 +64,7 @@ export const updateSale = async (req, res) => {
   }
 
   try {
+    const updates = req.body
     const updated = await Sale.findByIdAndUpdate(id, updates, { new: true });
 
     if (!updated) {
