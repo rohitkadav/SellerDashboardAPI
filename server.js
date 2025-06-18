@@ -10,6 +10,7 @@ import reportRouter from './routes/reportRoute.js';
 import warehouseRouter from './routes/warehouseRoute.js';
 import importRouter from './routes/importRoute.js';
 import auditRouter from './routes/auditRoute.js';
+import predictRouter from './routes/predictRoute.js';
 
 
 
@@ -29,20 +30,11 @@ app.use('/api/reports', reportRouter);
 app.use('/api/warehouse', warehouseRouter);
 app.use('/api/import', importRouter);
 app.use('/api/audit', auditRouter);
+app.use('/api/predict', predictRouter);
 
 app.get('/' , (req , res) => {
     res.send("APP is Working")
 })
-
-
-
-
-
-
-
-
-
-
 
 app.listen(PORT , ()=>{
     console.log(`Server is Listening on ${PORT}`)
