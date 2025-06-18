@@ -1,0 +1,1182 @@
+{
+	"info": {
+		"_postman_id": "e84565ef-9296-427f-bf08-efa974a9f259",
+		"name": "SellerDashboardApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40726856"
+	},
+	"item": [
+		{
+			"name": "Login/ Register",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"alice@example.com\",\r\n  \"password\": \"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\" : \"Terna\",\r\n  \"email\": \"terna@gmail.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"seller\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MDA2MiwiZXhwIjoxNzUwMjM2NDYyfQ.orQi3DnAv7haxMu0qr84iPjfAsfk6CBqgYUOOcuicj4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Remove Token at frontend"
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MDA2MiwiZXhwIjoxNzUwMjM2NDYyfQ.orQi3DnAv7haxMu0qr84iPjfAsfk6CBqgYUOOcuicj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MDA2MiwiZXhwIjoxNzUwMjM2NDYyfQ.orQi3DnAv7haxMu0qr84iPjfAsfk6CBqgYUOOcuicj4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Rohit\",\r\n  \"email\": \"rohit@example.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"seller\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/admin-dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"admin-dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seller Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/seller-dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"seller-dashboard"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sales API",
+			"item": [
+				{
+					"name": "Create Sale ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"quantity\": 3,\r\n  \"amount\": 1200,\r\n  \"category\": \"Fashion\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sales/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All sales",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"quantity\": 3,\r\n  \"amount\": 1200,\r\n  \"category\": \"Fashion\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sales/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter By product id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"quantity\": 3,\r\n  \"amount\": 1200,\r\n  \"category\": \"Fashion\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sales?productId=P1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "P1001"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter By Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"quantity\": 3,\r\n  \"amount\": 1200,\r\n  \"category\": \"Fashion\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sales?category=Fashion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Fashion"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Updating the Sales data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTExZTZlZWM1YjU2ZDI1MmI1NTIyNSIsInJvbGUiOiJzZWxsZXIiLCJpYXQiOjE3NTAxNTA1MzgsImV4cCI6MTc1MDIzNjkzOH0.iQLzB0eQzcoIoquMKht0SCPwngMDBRuJNuvokR2uHg8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 10,\r\n  \"amount\": 4500\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/sales/6851329b312b83d9106da874\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales",
+								"6851329b312b83d9106da874\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Summary",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sales/summary?type=month\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales",
+								"summary"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "month\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sale",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/sales/6851329b312b83d9106da874\n\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sales",
+								"6851329b312b83d9106da874\n\n"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock Management",
+			"item": [
+				{
+					"name": "Add Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P2002\",\r\n  \"sku\": \"SKU2002\",\r\n  \"quantity\": 12,\r\n  \"lowStockThreshold\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/stock/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/stock/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Low Stocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/stock/low-stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"low-stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Stocks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/stock/685148e2c9f1eeaded23b289",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"685148e2c9f1eeaded23b289"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk Updates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  { \"sku\": \"SKU2002\", \"quantity\": 15 }\r\n  \r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/stock/bulk-update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"stock",
+								"bulk-update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Returns API",
+			"item": [
+				{
+					"name": "Post Returns",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"saleId\": \"68511e6eec5b56d252b55225\",  // from your Sale record\r\n  \"productId\": \"P2003\",\r\n  \"quantity\": 2,\r\n  \"reason\": \"Damaged item\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/returns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"returns"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Returns",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/returns",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"returns"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reporting",
+			"item": [
+				{
+					"name": "Summary Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reports/summary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Summary CSV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reports/export",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Summary JSON",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reports/export-json",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"export-json"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seller Performance Metrics",
+			"item": [
+				{
+					"name": "Metrics Of Seller Performance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/reports/metrics?sellerId=68511e6eec5b56d252b55225",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"metrics"
+							],
+							"query": [
+								{
+									"key": "sellerId",
+									"value": "68511e6eec5b56d252b55225"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Multi-warehouse Stock Tracking",
+			"item": [
+				{
+					"name": "Warehouse Stock Transfer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"sku\": \"SKU1001\",\r\n  \"fromWarehouse\": \"WH-A\",\r\n  \"toWarehouse\": \"WH-B\",\r\n  \"quantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/warehouse/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"warehouse",
+								"transfer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bonus 1 : Export / Import Sales",
+			"item": [
+				{
+					"name": " Bonus Features 1. Export stock CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"sku\": \"SKU1001\",\r\n  \"fromWarehouse\": \"WH-A\",\r\n  \"toWarehouse\": \"WH-B\",\r\n  \"quantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/reports/export/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"export",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Bonus Features 1. Export sales CSV",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": \"P1001\",\r\n  \"sku\": \"SKU1001\",\r\n  \"fromWarehouse\": \"WH-A\",\r\n  \"toWarehouse\": \"WH-B\",\r\n  \"quantity\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/reports/export/sales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"reports",
+								"export",
+								"sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": " Bonus Features 1. Import stocks CSV",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDE1MzI1MCwiZXhwIjoxNzUwMjM5NjUwfQ.rfGL5aZQThEcOxMZ8V0-pBKJHFXYJWdHkzFz9cXmD_4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Royaa/Downloads/.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/import/stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"import",
+								"stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bonus 2: Audit Logs (track stock/sale changes)",
+			"item": [
+				{
+					"name": "Audit Logs (track stock/sale changes)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDI0MTE2NiwiZXhwIjoxNzUwMzI3NTY2fQ.DroYB_R0XYV_HTc8v0uqN23exO66eWfI6VP2ofbPEaI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/audit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"audit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bonus 3: Predictive Restocking Engine",
+			"item": [
+				{
+					"name": "Predict Restock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTEyYjk2M2MzMWI3N2JkY2FkZTMxNCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MDI0MTE2NiwiZXhwIjoxNzUwMzI3NTY2fQ.DroYB_R0XYV_HTc8v0uqN23exO66eWfI6VP2ofbPEaI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/predict/restock?leadTimeDays=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"predict",
+								"restock"
+							],
+							"query": [
+								{
+									"key": "leadTimeDays",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

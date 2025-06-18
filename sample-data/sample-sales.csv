@@ -1,0 +1,5 @@
+productId,sellerId,quantity,amount,category,date
+P1001,SELLER1,2,500,Electronics,2024-06-01
+P1002,SELLER2,1,150,Fashion,2024-06-03
+P1003,SELLER1,4,1200,Furniture,2024-06-04
+P1001,SELLER1,3,750,Electronics,2024-06-07

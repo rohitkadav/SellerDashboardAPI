@@ -1,3 +1,8 @@
+/*
+ * © 2025 Rohit Kadav
+ * Project: Seller DashBoard API for DevifyX
+ * This code is for assignment/demo purposes only. Do not reuse, redistribute, or republish without permission.
+ */
 import express from 'express';
 import cors from  'cors';
 import connectDB from './config/mongodb.js';

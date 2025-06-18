@@ -1,0 +1,5 @@
+productId,sku,quantity,warehouseId,lowStockThreshold
+P1001,SKU1001,20,WH-A,5
+P1002,SKU1002,10,WH-B,3
+P1003,SKU1003,5,WH-A,2
+P1004,SKU1004,0,WH-C,1
