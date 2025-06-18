@@ -9,6 +9,7 @@ import returnRouter from './routes/returnRoute.js';
 import reportRouter from './routes/reportRoute.js';
 import warehouseRouter from './routes/warehouseRoute.js';
 import importRouter from './routes/importRoute.js';
+import auditRouter from './routes/auditRoute.js';
 
 
 
@@ -27,6 +28,7 @@ app.use('/api/returns', returnRouter);
 app.use('/api/reports', reportRouter);
 app.use('/api/warehouse', warehouseRouter);
 app.use('/api/import', importRouter);
+app.use('/api/audit', auditRouter);
 
 app.get('/' , (req , res) => {
     res.send("APP is Working")

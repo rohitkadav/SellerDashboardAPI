@@ -1,18 +1,41 @@
 import Sale from '../models/sales.js';
 import mongoose from 'mongoose';
+import { logActivity } from '../utils/auditLogger.js';
 
 export const createSale = async (req, res) => {
   try {
-    const sale = new Sale({
+    const sale = await Sale.create({
       ...req.body,
-      sellerId: req.user.id // from JWT
+      sellerId: req.user.id
     });
-    await sale.save();
+
+    await logActivity({
+      action: 'CREATE_SALE',
+      entity: 'Sale',
+      entityId: sale._id,
+      user: req.user.id,
+      details: req.body
+    });
+
     res.status(201).json(sale);
   } catch (err) {
     res.status(500).json({ message: 'Error creating sale', error: err.message });
   }
 };
+
+
+// export const createSale = async (req, res) => {
+//   try {
+//     const sale = new Sale({
+//       ...req.body,
+//       sellerId: req.user.id // from JWT
+//     });
+//     await sale.save();
+//     res.status(201).json(sale);
+//   } catch (err) {
+//     res.status(500).json({ message: 'Error creating sale', error: err.message });
+//   }
+// };
 
 export const getSales = async (req, res) => {
   try {
